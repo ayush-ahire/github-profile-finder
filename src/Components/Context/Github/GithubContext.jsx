@@ -18,7 +18,7 @@ export const GithubProvider = ({ children }) => {
       `https://api.github.com/search/users?q=${text}`,
       {
         headers: {
-          Authorization: `token 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`,
+          Authorization: `token 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`,
         },
       }
     );
