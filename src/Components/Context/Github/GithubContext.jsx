@@ -1,6 +1,5 @@
 import React from "react";
 import { createContext, useReducer } from "react";
-//import { useSearchParams } from "react-router-dom";
 import githubReducers from "./GithubReducers";
 
 const GithubContext = createContext();
@@ -11,17 +10,16 @@ export const GithubProvider = ({ children }) => {
     loading: false,
   };
   const [state, dispatch] = useReducer(githubReducers, initialstate);
+  const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
+  const GITHUB_API = process.env.REACT_APP_GITHUB_API;
   const searchUsers = async (text) => {
-    // const params= new useSearchParams({q:text})
+    const params = new URLSearchParams({ q: text });
     setLoading();
-    const response = await fetch(
-      ` https://api.github.com/search/users?q=${text}`,
-      {
-        headers: {
-          Authorization: `token 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`,
-        },
-      }
-    );
+    const response = await fetch(` ${GITHUB_API}search/users?${params}`, {
+      headers: {
+        Authorization: `${GITHUB_TOKEN}`,
+      },
+    });
     const { items } = await response.json();
     dispatch({
       type: "GET_USERS",
