@@ -15,10 +15,10 @@ export const GithubProvider = ({ children }) => {
     // const params= new useSearchParams({q:text})
     setLoading();
     const response = await fetch(
-      `https://api.github.com/search/users?q=${text}`,
+      ` https://api.github.com/search/users?q=${text}`,
       {
         headers: {
-          Authorization: `token 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`,
+          Authorization: `token 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`,
         },
       }
     );
