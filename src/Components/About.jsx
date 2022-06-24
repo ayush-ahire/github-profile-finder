@@ -8,8 +8,8 @@ function About() {
       <p className="text-lg text-gray-400">
         Developer Info:{" "}
         <span className="text-white">
-          HI! my name is Ayush. React developed, also keen in educating
-          myself in UI/ Web designing.Hvaae Created this project just for
+          HI! my name is Ayush. I'm React developer, also keen in educating
+          myself in UI/ Web designing.I created this project just for
           learning purpose.
         </span>
       </p>
